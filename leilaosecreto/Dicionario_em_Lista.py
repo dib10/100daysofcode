@@ -15,7 +15,6 @@ registro_de_viagens = [ # colchete é uma lista, chave é um dicionário
   },
 ]
 # Não mude o código acima 👆
-
 # TODO: Escreva a função que permitirá a adição de novos países
 # ao registro_de_viagens.
 def add_novo_pais(pais,visitas,lista_de_cidades):
