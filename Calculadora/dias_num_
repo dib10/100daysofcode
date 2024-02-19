@@ -1,0 +1,22 @@
+def eh_bissexto(ano):
+  if ano % 400 == 0:
+    print("Ano bissexto")
+    return True
+  elif ano % 100 == 0:
+    return False
+  elif ano % 4 == 0:
+    return True
+  else:
+    return False
+# TODO: Adicione mais código aqui 👇
+def dias_no_mes(ano,mes):
+  dias_do_mes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  if mes == 2 and eh_bissexto(ano):
+    return 29
+  else:
+    return dias_do_mes[mes-1] #-1 pois o índice começa em 0
+#🚨 Não altere nenhum dos códigos abaixo 
+ano = int(input("Insira um ano: ")) # Insira um ano
+mes = int(input("Insira um mês: ")) # Insira um mês
+dias = dias_no_mes(ano, mes)
+print(f"O mês {mes} do ano {ano} tem {dias} dias.")
