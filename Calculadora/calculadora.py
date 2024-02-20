@@ -24,3 +24,7 @@ num2 = int(input("Digite o segundo número: "))
 print("Digite a operação desejada: ")
 for i in operacao:
     print(i)
+simbolo = input("Digite o simbolo da operação: ")   
+calcula = operacao[simbolo]
+resposta = calcula(num1,num2)
+print(f"{num1} {simbolo} {num2} = {resposta}")
