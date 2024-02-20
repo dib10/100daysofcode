@@ -1,11 +1,11 @@
 def eh_bissexto(ano):
   if ano % 400 == 0:
-    print("Ano bissexto")
     return True
   elif ano % 100 == 0:
-    return False
+    return False 
   elif ano % 4 == 0:
     return True
+  #se não for divisível por 4, 100 ou 400, não é bissexto
   else:
     return False
 # TODO: Adicione mais código aqui 👇
