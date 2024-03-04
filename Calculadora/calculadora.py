@@ -21,7 +21,7 @@ def div(n1,n2):
 
 operacao = {'+': soma, '-':sub, '*':mult, '/':div}
 def calculadora():
-    num1 = int(input("Digite o primeiro número: "))
+    num1 = float(input("Digite o primeiro número: "))
     #imprimir as operações
     print("Digite a operação desejada: ")
     for i in operacao:
@@ -29,7 +29,7 @@ def calculadora():
     deve_continuar = True
     while deve_continuar:
         simbolo = input("Digite o simbolo da operação: ")   
-        num2 = int(input("Digite o próximo número: "))
+        num2 = float(input("Digite o próximo número: "))
         calcula = operacao[simbolo]
         resposta = calcula(num1,num2)
         print(f"{num1} {simbolo} {num2} = {resposta}")
