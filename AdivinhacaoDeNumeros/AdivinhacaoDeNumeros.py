@@ -22,7 +22,7 @@ else:
     tentativas = 5
 
 def adivinhacao():
-    global tentativas
+    global tentativas # Define a variável tentativas como global para que possa ser acessada dentro da função
     while tentativas > 0:
         print(f"Você tem {tentativas} tentativas restantes para adivinhar o número.")
         palpite = int(input("Adivinhe o número:"))
