@@ -1,5 +1,5 @@
 from dados import data
-from art import logo
+from art import logo,vs
 import os
 import random
 
@@ -11,8 +11,9 @@ def selecionar_dois_itens():
     return itens_selecionados
 
 def exibir_itens(A,B):
-    print(f"A: {A['name']}, {A['description']}, {A['country']}")
     print(logo)
+    print(f"A: {A['name']}, {A['description']}, {A['country']}")
+    print(vs)
     print(f"B: {B['name']}, {B['description']}, {B['country']}")
 
 def comparar_seguidores(A,B):
