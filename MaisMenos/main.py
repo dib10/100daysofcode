@@ -47,7 +47,7 @@ def jogo():
             print(f"Você acertou! Pontuação: {pontos}")
         else:
             print(f"Você errou! Pontuação final: {pontos}")
-            print(f"O correto era {resultado_dict['name']} com {resultado_dict['follower_count']} seguidores, você escolheu {resposta_dict['name']} com {resposta_dict['follower_count']} seguidores")
+            print(f"O correto era {resultado_dict['name']} com {resultado_dict['follower_count']} milhões de seguidores, você escolheu {resposta_dict['name']} com {resposta_dict['follower_count']} milhões de seguidores")
             continuar = False
 
 jogo()
