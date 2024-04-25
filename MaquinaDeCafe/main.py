@@ -1,6 +1,6 @@
 from  art import logo
 
-print("Bem vindo(a) a máquina de café!")
+print("Bem vindo(a) a máquina de café! ☕️")
 print(logo)
 
 MENU = {
@@ -36,7 +36,9 @@ recursos = {
 }
 
 def exibir_sabores():
-    print("Escolha um café: ")
-    for sabor in MENU: #sabor é o que itera sobre o dicionário MENU
-        print(f"{sabor} - \033[92mR${MENU[sabor]['custo']}\033[0m")
+    for i, sabor in enumerate(MENU,start=1): #sabor é o que itera sobre o dicionário MENU
+        print(f"{i}. {sabor} - \033[92mR${MENU[sabor]['custo']}\033[0m")
+    int(input("Digite o número correspondente ao café desejado:"))
+
+
 exibir_sabores()
