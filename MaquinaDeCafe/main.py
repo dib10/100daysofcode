@@ -9,7 +9,11 @@ for item in recursos:
 def exibir_sabores():
     for i, sabor in enumerate(MENU,start=1): #sabor é o que itera sobre o dicionário MENU
         print(f"{i}. {sabor} - \033[92mR${MENU[sabor]['custo']}\033[0m")
-    escolha = int(input("Digite o número correspondente ao café desejado:"))
+    try:
+        escolha = int(input("Digite o número correspondente ao café desejado:"))
+    except ValueError:
+        print("Por favor, insira um número.")
+        return None
     if escolha == 1:
         return "espresso"
     elif escolha == 2:
@@ -39,18 +43,16 @@ def verifica_recursos(sabor):
     return True
         
 def processar(sabor,total_moedas):
-    custo =MENU[sabor]['custo']
-    if total_moedas >=custo:
+    custo = MENU[sabor]['custo']
+    if total_moedas >= custo:
         for item in MENU[sabor]['ingredientes']:
-            recursos[item] -=MENU[sabor]['ingredientes'][item]
-            print(f"Você selecionou {sabor}, que custa ${custo}")
-            print(f"Você inseriu {round(total_moedas, 2)}.")
-            print(f"Troco: ${round(total_moedas - custo,2)}")
-            return True
+            recursos[item] -= MENU[sabor]['ingredientes'][item]
+        print(f"Você selecionou {sabor}, que custa ${custo}")
+        print(f"Você inseriu {round(total_moedas, 2)}.")
+        return True
     else:
-        print("Desculpe, não há dinheiro suficiente.")
+        print("Desculpe, você não inseriu moedas suficientes.")
         return False
-    
 def limpar_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
