@@ -21,10 +21,10 @@ def exibir_sabores():
 
 def inserir():
     moedas = {
-        'Quarters': 0.25,
-        'Dimes': 0.10,
-        'Nickels': 0.05,
-        'Pennies': 0.01
+        'Quarters($ 0,25)': 0.25,
+        'Dimes($ 0,10)': 0.10,
+        'Nickels($ 0,05)': 0.05,
+        'Pennies($ 0,01)': 0.01
     }
     total_moedas = 0
     for moeda in moedas:
@@ -43,9 +43,9 @@ def processar(sabor,total_moedas):
     if total_moedas >=custo:
         for item in MENU[sabor]['ingredientes']:
             recursos[item] -=MENU[sabor]['ingredientes'][item]
-            print(f"Você selecionou {sabor}, que custa R${custo}")
+            print(f"Você selecionou {sabor}, que custa ${custo}")
             print(f"Você inseriu {round(total_moedas, 2)}.")
-            print(f"Troco: R${round(total_moedas - custo,2)}")
+            print(f"Troco: ${round(total_moedas - custo,2)}")
             return True
     else:
         print("Desculpe, não há dinheiro suficiente.")
