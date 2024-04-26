@@ -47,8 +47,13 @@ def processar(sabor,total_moedas):
     if total_moedas >= custo:
         for item in MENU[sabor]['ingredientes']:
             recursos[item] -= MENU[sabor]['ingredientes'][item]
-        print(f"Você selecionou {sabor}, que custa ${custo}")
-        print(f"Você inseriu {round(total_moedas, 2)}.")
+        print('-'*60)
+        print(f"Você selecionou {sabor}, que custa \033[92m${custo}\033[0m")
+        print(f"Você inseriu \033[92m{round(total_moedas, 2)}\033[0m.")
+        troco = round(total_moedas - custo, 2)
+        print(f"Seu troco é de \033[92m${troco}\033[0m")
+        print('-'*60)
+         
         return True
     else:
         print("Desculpe, você não inseriu moedas suficientes.")
@@ -61,10 +66,17 @@ def main():
     print("Bem vindo(a) a máquina de café! ☕️")
     print(logo)
     exibir_relatório = input("Deseja ver o relatório de recursos? [1] para sim, [2] para não: ")
+    print('-'*60)
+
     if exibir_relatório == '1':
         print("Recursos disponíveis:")
         for item in recursos:
-            print(f"{item}: {recursos[item]}ml")
+            if item == 'café':
+                print(f"{item}: {recursos[item]} g")
+            else:
+                print(f"{item}: {recursos[item]} ml")
+        print('-'*60)
+
     sabor = exibir_sabores()
     if verifica_recursos(sabor):
         total_moedas = inserir()
