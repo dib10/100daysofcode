@@ -38,7 +38,7 @@ def inserir():
 def verifica_recursos(sabor):
     for item in MENU[sabor]['ingredientes']:
         if MENU[sabor]['ingredientes'][item] > recursos[item]:
-            print(f"Desculpe, não há ingredientes suficientes para fazer o café {sabor}.")
+            print("\033[91mDesculpe, não há ingredientes suficientes para fazer o café {sabor}.\033[0m")
             return False
     return True
         
@@ -56,7 +56,7 @@ def processar(sabor,total_moedas):
          
         return True
     else:
-        print("Desculpe, você não inseriu moedas suficientes.")
+        print("\033[91mDesculpe, você não inseriu moedas suficientes.\033[0m")
         return False
 def limpar_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -72,9 +72,9 @@ def main():
         print("Recursos disponíveis:")
         for item in recursos:
             if item == 'café':
-                print(f"{item}: {recursos[item]} g")
+                print(f"\033[94m{item}: {recursos[item]} g\033[0m")
             else:
-                print(f"{item}: {recursos[item]} ml")
+                print(f"\033[94m{item}: {recursos[item]} ml\033[0m")
         print('-'*60)
 
     sabor = exibir_sabores()
