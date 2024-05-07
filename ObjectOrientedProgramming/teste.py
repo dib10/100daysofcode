@@ -17,5 +17,9 @@ table = PrettyTable()
 
 table.add_column("Nome do Pokemón", ["Pikachu", "Charmander", "Squirtle"])
 table.add_column("Tipo",["Elétrico","Fogo","Água"])
+
+table.align = "l"
+
 print(table)
+
 
