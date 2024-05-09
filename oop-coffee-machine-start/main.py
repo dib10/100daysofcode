@@ -4,3 +4,6 @@ from money_machine import MoneyMachine
 
 money_machine = MoneyMachine()
 money_machine.report()
+
+coffe_maker = CoffeeMaker()
+coffe_maker.report()
