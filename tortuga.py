@@ -12,12 +12,8 @@ screen = turtle.Screen()
 
 
 #programa
-tortuguita.setheading(90)
-tortuguita.forward(100)
-tortuguita.setheading(0)
-tortuguita.forward(100)
-tortuguita.setheading(270)
-tortuguita.forward(100)
-tortuguita.setheading(180)
-tortuguita.forward(100)
+for i in range(4):
+    tortuguita.forward(100)
+    tortuguita.right(90)
+
 turtle.done()
