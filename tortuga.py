@@ -12,8 +12,10 @@ screen = turtle.Screen()
 
 
 #programa
-for i in range(4):
-    tortuguita.forward(100)
-    tortuguita.right(90)
+for i in range(10):
+    tortuguita.forward(10)
+    tortuguita.penup()
+    tortuguita.forward(10)
+    tortuguita.pendown()
 
 turtle.done()
