@@ -4,10 +4,22 @@ import random
 screen = Screen()
 screen.setup(width=500, height=400)
 
-
-
 aposta_usuario = screen.textinput("Aposte na sua tartaruga", prompt="Qual cor de tartaruga irá vencer? ")
 print(f"A aposta do usuário é: {aposta_usuario}")
+
+
+class ConfiguracaoTela:
+    def __init__(self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+        self.configurar_tela()
+
+    def configurar_tela(self):
+        screen.setup(width=self.largura, height=self.altura)
+        screen.title("Corrida de Tartarugas")
+
+# Cria uma instância da configuração da tela
+configuracao = ConfiguracaoTela(500, 400)
 
 
 #classe para tartaruga
